@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo 01</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<h1>#iolima15</h1>
+		<form>
+			<div class="row">
+				<div class="form-group col-xs-4">
+					<label for="">Número de manzanas en una bolsa</label>
+					<input type="text" class="form-control" ng-model="applesNumber">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-xs-4">
+					<label for="">Número de bolsas</label>
+					<input type="text" class="form-control" ng-model="bagNumber">
+				</div>
+			</div>
+			<div class="row" ng-show="applesNumber && bagNumber">
+				<div class="form-group col-xs-4">
+					<label for="">En total tengo: {{ applesNumber * bagNumber }} deliciosas manzanas</label>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="../libs/angular/angular.js"></script>
+</body>
+</html>
