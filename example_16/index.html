@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejemplo 16</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>#iolima15</h1>
+		<h3>Tecnologías</h3>
+		<div ng-view></div>
+	</div>
+	
+	<script src="../libs/angular/angular.js"></script>
+	<script src="../libs/angular-route/angular-route.js"></script>
+
+	<script>
+
+	var app = angular.module('myApp', ['ngRoute']);
+
+	app.config(function($routeProvider) {
+		$routeProvider
+			.when('/', {
+				template: '<ul><li ng-repeat="t in technologies">{{t.description}}</li></ul>',
+				controller: 'technologiesListCtrl'
+			})
+			.when('/:t', {
+				template: '<h2>Detalle de la tecnología</h2>',
+				controller: 'technologiesDetailCtrl'
+			})
+			.otherwise({
+				redirecTo: '/'
+			});
+	});
+
+	app.controller('technologiesListCtrl', function($scope, $http) {
+		$http.get('technologies.json').success(function(data) {
+			$scope.technologies = data;
+		});
+	});
+
+	app.controller('technologiesDetailCtrl', function($scope, $routeParams) {
+		console.log($routeParams);
+	});
+
+	</script>
+</body>
+</html>

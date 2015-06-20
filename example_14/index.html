@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo 14</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body ng-controller="todoCtrl">
+	<div class="container">
+		<h1>#iolima15</h1>
+		<h3>Qué harás hoy...???</h3>
+		<div class="row">
+			<div class="form-group col-xs-3">
+				<div class="input-group">
+					<span class="input-group-addon">Buscar</span>
+					<input type="text" class="form-control" ng-model="query">
+				</div>
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><a ng-click="sort = 'time'; reverse = !reverse" href="javascript:;">Hora</a></th>
+					<th><a ng-click="sort = 'description'; reverse = !reverse" href="javascript:;">Actividad</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="activity in activities | filter:query | orderBy:sort:reverse">
+					<td>{{activity.time}} horas</td>
+					<td><b>{{activity.description}}</b></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="../libs/angular/angular.js"></script>
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('todoCtrl', 
+		['$scope', '$http', 
+		function($scope, $http) {
+			$http.get('todo.json').success(function(data) {
+				$scope.activities = data;
+			});
+
+			$scope.sort = 'description'
+			$scope.reverse = true
+		}]
+	);
+	</script>
+</body>
+</html>

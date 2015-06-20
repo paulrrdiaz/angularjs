@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Example 03</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div class="container" ng-app>
+		<h1>#iolima15</h1>
+		<div class="row">
+			<form>
+				<label class="col-xs-2" for="">¿Cuál es tu nombre?</label>
+				<input ng-model="name" type="text">
+			</form>
+		</div>
+		<div class="row" ng-show="name">
+			<h2>Mi nombre es: <span>{{name}}</span></h2>
+		</div>
+	</div>
+	<script src="../libs/angular/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo 15</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body ng-controller="technologiesCtrl">
+	<div class="container">
+		<h1>#iolima15</h1>
+		<h3>Tecnologías</h3>
+		<div class="row">
+			<div class="form-group col-xs-3">
+				<div class="input-group">
+					<span class="input-group-addon">Buscar</span>
+					<input type="text" class="form-control" ng-model="query">
+				</div>
+			</div>
+		</div>
+		<table class="table" style="width: auto">
+			<thead>
+				<tr>
+					<th><a ng-click="sort = 'type'; reverse = !reverse" href="javascript:;">Tipo</a></th>
+					<th>Icono</th>
+					<th><a ng-click="sort = 'description'; reverse = !reverse" href="javascript:;">Descripcion</a></th>
+					<th>Link</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="t in technologies | filter:query | orderBy:sort:reverse">
+					<td>{{t.type}}</td>
+					<td><img width="60" ng-src="{{t.img}}" alt=""></td>
+					<td><b>{{t.description}}</b></td>
+					<td><a ng-href="t.link">Ir a la web</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="../libs/angular/angular.js"></script>
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('technologiesCtrl', 
+		['$scope', '$http', 
+		function($scope, $http) {
+			$http.get('technologies.json').success(function(data) {
+				$scope.technologies = data;
+			});
+
+			$scope.sort = 'type'
+			$scope.reverse = true
+		}]
+	);
+	</script>
+</body>
+</html>

@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Ejemplo 01</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Example 01</title>
 	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
 	<div class="container">
 		<h1>#iolima15</h1>
-		<form>
-			<div class="row">
-				<div class="form-group col-xs-4">
-					<label for="">Número de manzanas en una bolsa</label>
-					<input type="text" class="form-control" ng-model="applesNumber">
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-xs-4">
-					<label for="">Número de bolsas</label>
-					<input type="text" class="form-control" ng-model="bagNumber">
-				</div>
-			</div>
-			<div class="row" ng-show="applesNumber && bagNumber">
-				<div class="form-group col-xs-4">
-					<label for="">En total tengo: {{ applesNumber * bagNumber }} deliciosas manzanas</label>
-				</div>
-			</div>
-		</form>
+		<div class="row">
+			<form>
+				<label class="col-xs-2" for="">¿Cuál es tu nombre?</label>
+				<input id="nameInput" type="text">
+			</form>
+		</div>
+		<div class="row">
+			<h2>Mi nombre es: <span id="nameSpan"></span></h2>
+		</div>
 	</div>
-	<script src="../libs/angular/angular.js"></script>
+	<script>
+	var nameInputElement = document.getElementById('nameInput'),
+		h2Element = document.getElementsByTagName('h2')[0],
+		nameSpanElement = document.getElementById('nameSpan');
+
+	h2Element.style.display = 'none';
+
+	nameInputElement.addEventListener('keyup', function() {
+		var inputValue = nameInputElement.value;
+
+		if (inputValue.length) {
+			h2Element.style.display = 'block'
+		} else {
+			h2Element.style.display = 'none'
+		}
+
+		nameSpanElement.innerHTML = inputValue;
+	});
+	</script>
 </body>
 </html>

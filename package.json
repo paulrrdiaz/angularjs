@@ -1,0 +1,25 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "El poder de Angularjs =  - Creado por Misko Hevery en el 2009  - Es un framework open source, mantenido por Google  - Tiene una excelente documentación  - Una gran comunidad de usuario que comparten conocimientos y aún sigue creciendo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulrrdiaz/angularjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulrrdiaz/angularjs/issues"
+  },
+  "homepage": "https://github.com/paulrrdiaz/angularjs",
+  "devDependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.12.4",
+    "mongoose": "^3.8.30",
+    "node-restful": "^0.1.18"
+  }
+}

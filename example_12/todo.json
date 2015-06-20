@@ -1,0 +1,34 @@
+[
+	{
+		"description": "ducharme aunque haga frío",
+		"time": "7:00"
+	},
+	{
+		"description": "buscar algo para desayunar",
+		"time": "8:00"
+	},
+	{
+		"description": "ir Google I/O 2015 *-*",
+		"time": "9:00"
+	},
+	{
+		"description": "Hambre!!",
+		"time": "13:00"
+	},
+	{
+		"description": "tomar una siesta",
+		"time": "20:00"
+	},
+	{
+		"description": "coger mi guitarra",
+		"time": "21:00"
+	},
+	{
+		"description": "Cenar un poco",
+		"time": "22:00"
+	},
+	{
+		"description": "Ni idea...",
+		"time": "23:00"
+	}
+]

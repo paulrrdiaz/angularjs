@@ -1,0 +1,50 @@
+[
+	{
+		"type": "front-end",
+		"img": "http://www.ocpsoft.org/wp-content/uploads/2013/01/angularjs.png",
+		"description": "AngularJS",
+		"link": "http://angularjs.org"
+	},
+	{
+		"type": "front-end",
+		"img": "https://devbutze.com/wp-content/uploads/2015/02/react.png",
+		"description": "ReactJS",
+		"link": "http://facebook.github.io/react/"
+	},
+	{
+		"type": "front-end",
+		"img": "https://upload.wikimedia.org/wikipedia/en/6/69/Ember.js_Logo_and_Mascot.png",
+		"description": "Ember",
+		"link": "http://emberjs.com/"
+	},
+	{
+		"type": "front-end",
+		"img": "https://avatars3.githubusercontent.com/u/1781835?v=3&s=400",
+		"description": "Requirejs",
+		"link": "http://requirejs.org"
+	},
+	{
+		"type": "back-end",
+		"img": "http://jumiso.com/img/tecnologia/laravel.png",
+		"description": "Laravel",
+		"link": "http://angularjs.org"
+	},
+	{
+		"type": "back-end",
+		"img": "http://nightdeveloper.net/wp-content/uploads/2014/12/mongo_db.png",
+		"description": "MongoDB",
+		"link": "http://angularjs.org"
+	},
+	{
+		"type": "back-end",
+		"img": "http://files.softicons.com/download/application-icons/ruby-programming-icons-by-ahmad-galal/png/256/RubyOnRails.png",
+		"description": "Rails",
+		"link": "http://angularjs.org"
+	},
+	{
+		"type": "back-end",
+		"img": "https://www.rosehosting.com/blog/wp-content/uploads/2014/03/sails.png",
+		"description": "SailsJS",
+		"link": "http://angularjs.org"
+	}
+]

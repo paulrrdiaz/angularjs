@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo 08</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body ng-controller="namesCtrl">
+	<div class="container">
+		<h1>#iolima15</h1>
+		<form>
+			<div class="row">
+				<div class="form-group col-xs-3">
+					<label for="">Nombre</label>
+					<input type="text" class="form-control" ng-model="firstName">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-xs-3">
+					<label for="">Apellidos</label>
+					<input type="text" class="form-control" ng-model="lastName">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-xs-3">
+					<label for="">Username</label>
+					<input type="text" class="form-control" ng-model="userName">
+				</div>
+			</div>
+			<div class="row">
+				<h2 class="form-group col-xs-6">
+					<label for="">Hola, soy {{firstName}} {{lastName}} y puedes encontrarme como  {{userName}}</label>
+				</h2>
+			</div>
+			<div class="row">
+				<h2 class="form-group col-xs-6">
+					<label for="">lastName antiguo {{oldValue}} && lastName actual {{newValue}}</label>
+				</h2>
+			</div>
+		</form>
+	</div>
+	<script src="../libs/angular/angular.js"></script>
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('namesCtrl', function($scope) {
+		$scope.firstName = "Paúl Reneé Rhys";
+		$scope.lastName = "Díaz Navarrete";
+
+		$scope.$watch('firstName', function(newValue, oldValue) {
+			$scope.oldValue = oldValue;
+			$scope.newValue = newValue;
+		});
+
+		setTimeout( function() {
+			$scope.userName = "@paulrrdiaz";
+			//$scope.$apply()
+		}, 1000);
+	});
+	</script>
+</body>
+</html>

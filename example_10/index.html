@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo 10</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body ng-controller="todoCtrl">
+	<div class="container">
+		<h1>#iolima15</h1>
+		<h3>Qué harás hoy...???</h3>
+		<div class="row" ng-repeat="activity in activities">
+			<div class="form-group col-xs-6">
+				<p class="bg-info">
+					A las {{activity.time}} horas tendré <b>{{activity.description}}</b>
+				</p>
+			</div>
+		</div>
+	</div>
+	<script src="../libs/angular/angular.js"></script>
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('todoCtrl', function($scope) {
+		$scope.activities = [
+			{
+				"description": "que ducharme aunque haga frío",
+				"time": "7:00"
+			},
+			{
+				"description": "que buscar algo para desayunar",
+				"time": "8:00"
+			},
+			{
+				"description": "que ir Google I/O 2015 *-*",
+				"time": "9:00"
+			},
+			{
+				"description": "Hambre!!",
+				"time": "13:00"
+			}
+		];
+	});
+	</script>
+</body>
+</html>

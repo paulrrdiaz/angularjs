@@ -1,33 +1,48 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Ejemplo 02</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Example 02</title>
 	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
 	<div class="container">
 		<h1>#iolima15</h1>
-		<form>
-			<div class="row">
-				<div class="form-group col-xs-4">
-					<label for="">Número de manzanas en una bolsa</label>
-					<input type="text" class="form-control" ng-model="applesNumber">
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-xs-4">
-					<label for="">Número de bolsas</label>
-					<input type="text" class="form-control" ng-model="bagNumber">
-				</div>
-			</div>
-			<div class="row" ng-show="applesNumber && bagNumber">
-				<div class="form-group col-xs-4">
-					<label for="">En total tengo: {{ applesNumber * bagNumber }} deliciosas manzanas</label>
-				</div>
-			</div>
-		</form>
+		<div class="row">
+			<form>
+				<label class="col-xs-2" for="">¿Cuál es tu nombre?</label>
+				<input id="nameInput" type="text">
+			</form>
+		</div>
+		<div class="row">
+			<h2>Mi nombre es: <span id="nameSpan"></span></h2>
+		</div>
 	</div>
-	<script src="../libs/angular/angular.js"></script>
+	<script src="../libs/jquery/dist/jquery.min.js"></script>
+	<script>
+	$(document).on('ready', function() {
+
+		var nameInputElement = $('#nameInput'),
+			h2Element = $('h2'),
+			nameSpanElement = $('#nameSpan');
+
+		h2Element.hide();
+
+		nameInputElement.on('keyup', function() {
+			var $this = $(this),
+				inputValue = $this.val();
+
+			if (inputValue.length) {
+				h2Element.fadeIn();
+			} else {
+				h2Element.fadeOut();
+			}
+
+			nameSpanElement.html(inputValue);
+		});
+	});
+	</script>
 </body>
 </html>

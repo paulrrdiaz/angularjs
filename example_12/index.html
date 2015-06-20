@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo 12</title>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body ng-controller="todoCtrl">
+	<div class="container">
+		<h1>#iolima15</h1>
+		<h3>Qué harás hoy...???</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Hora</th>
+					<th>Actividad</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="activity in activities">
+					<td>{{activity.time}} horas</td>
+					<td><b>{{activity.description}}</b></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="../libs/angular/angular.js"></script>
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('todoCtrl', 
+		['$scope', '$http', 
+		function($a, $b) {
+			$b.get('todo.json').success(function(data) {
+				$a.activities = data;
+			});
+		}]
+	);
+	</script>
+</body>
+</html>
