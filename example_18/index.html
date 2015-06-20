@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="googleioApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Example 18</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
 	<div class="container">
-		
+		<div ng-view></div>
 	</div>
 	<script src="../libs/angular/angular.js"></script>
 	<script src="../libs/angular-route/angular-route.js"></script>
-	<script src="../libs/angular-route/angular-resource.js"></script>
+	<script src="../libs/angular-resource/angular-resource.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>

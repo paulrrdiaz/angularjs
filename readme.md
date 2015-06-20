@@ -30,9 +30,9 @@ Su centro
 Y como funciona el Data-binding?
 -
 La explicaciones más sencilla es entendiendo 3 de las principales funciones de Angular.
-- **\$watch()** La función $watch es un Listener que espera algún cambio en algún componente de Angular.
-- **\$digest()** La función $digest es el Manager de la lista de watchers.
-- **\$apply():** La función $apply llama al Manager y define el alcance que tendrá en ese momento.
+- **$watch()** La función $watch es un Listener que espera algún cambio en algún componente de Angular.
+- **$digest()** La función $digest es el Manager de la lista de watchers.
+- **$apply():** La función $apply llama al Manager y define el alcance que tendrá en ese momento.
 
 Hasta ahora...
 -
@@ -47,15 +47,31 @@ Hasta ahora...
 > - [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat)
 > - [ng-submit](https://docs.angularjs.org/api/ng/directive/ngSubmit)
 > - [ng-click](https://docs.angularjs.org/api/ng/directive/ngClick)
-> - \$scope
-> - \$scope.\$watch()
-> - \$scope.\$digest() 
-> - \$scope.\$apply()
+> - $scope
+> - $scope.$watch()
+> - $scope.$digest() 
+> - $scope.$apply()
 > - [Angular Expressions](https://docs.angularjs.org/guide/expression)
-> - [\$http](https://docs.angularjs.org/api/ng/service/$http)
+> - [$http](https://docs.angularjs.org/api/ng/service/$http)
 > - filter
 > - orderBy
 > - [ng-src](https://docs.angularjs.org/api/ng/directive/ngSrc)
 > - [ng-href](https://docs.angularjs.org/api/ng/directive/ngHref)
 > - ngRoute
 > - ngResources
+
+[Angular UI](angular-ui.github.io)
+-
+Es un paquete de dependencias para facilitarnos la creación de ciertos elementos sobre Angular, por ejemplo:
+- [UI Bootstrap](http://angular-ui.github.io/bootstrap/) con sliders, datepickers, tabs, dropdown, pagination, modals, etc.
+- [UI Gmap](http://angular-ui.github.io/angular-google-maps/#!/) Interacción con el API de google maps vía Angular
+- [UI Validate](http://angular-ui.github.io/ui-utils/#/validate) Que nos permite validar formulario de una forma más rigurosa.
+
+
+y luego?
+-
+Lastimosamente esto no es un workshop y no se puede extender más el tiempo, pero, existe excelente material por toda la red; aquí algunos links recomendados.
+- [A better way to learn angularjs](https://thinkster.io/a-better-way-to-learn-angularjs/)
+- [Angularjs Fundamentals](https://www.youtube.com/watch?v=i9MHigUZKEM)
+- [Libros habidos y por haber de Angularjs](https://github.com/jmcunningham/AngularJS-Learning)
+- [An Introduction to AngularJS Forms Validation](https://www.youtube.com/watch?v=PxMwW1QBEro)

@@ -1,13 +1,39 @@
 var app = angular.module('googleioApp', ['ngRoute', 'ngResource']);
 
 app.
-	controller('todoCtrl', 
-		['$scope', '$todoResource', 
-			function($scope, todoResource) {
-
+	config(function($routeProvider){
+		$routeProvider
+			.when('/', {
+				templateUrl: 'views/users.html',
+				controller: 'usersCtrl'
+			})
+			.when('/user/:id', {
+				templateUrl: 'views/user.html',
+				controller: 'userCtrl'
+			})
+			.otherwise({
+				redirecTo: '/'
+			});
+	}).
+	controller('usersCtrl', 
+		['$scope', 'usersResource', 
+		function($scope, usersResource) {
+			usersResource.query(function(data) {
+				$scope.users = data;
+			})
+			$scope.removeUser = function(id) {
+				usersResource.delete({ id: id });
 			}
-		]
+		}]
 	).
-	factory('todoResource', function($resource) {
-		return $resource('http://localhost:3000/api/todos')
+	controller('userCtrl', 
+		['$scope', 'usersResource', '$routeParams', 
+		function($scope, usersResource, $routeParams) {
+			usersResource.get({ id: $routeParams.id }, function(data) {
+				$scope.user = data;
+			});
+		}]
+	).
+	factory('usersResource', function($resource) {
+		return $resource('http://jsonplaceholder.typicode.com/users/:id');
 	});
